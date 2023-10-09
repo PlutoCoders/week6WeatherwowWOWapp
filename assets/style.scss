@@ -1,0 +1,15 @@
+:root {
+    /* Create variables to easily adjust styling later */
+    --clientMain: blue;
+    --borderRadius: 8px;
+    --background: #314a89;
+    --cardSize: 20px;
+    /* Call the variable using: var(--variableNameHere) */
+}
+
+/* Utility Classes (Classes we use throughout */
+
+
+body {
+    background: var(--background);
+}
