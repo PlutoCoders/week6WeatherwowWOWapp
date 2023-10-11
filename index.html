@@ -3,19 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Super Weather Viewer</title>
+    <title>Weather App</title>
     <link rel="stylesheet" href="./assets/style.css">
     <link rel="icon" href="./assets/images/weatherIcon.png" type="image/x-icon">
+    <!-- Day JS -->
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.10.4/dayjs.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.10.4/plugin/utc.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.10.4/plugin/timezone.js"></script>
+    <!-- Custom Script Connection-->
+    <script src="./assets/script.js" type="module" defer></script>
 </head>
-<body>
-    <h1>Weather App</h1>
-    <button class="darkModeToggle">Dark Mode</button>
-    <div class="itemsToComplete">
-        <div class="itemtoComplete">Basic App Styling</div>
-        <div class="itemtoComplete">Connect Javascript</div>
-        <div class="itemtoComplete">Interact with API</div>
-        <div class="itemtoComplete">Something Else</div>
-
+<body class="weatherApp dark">
+    <div class="weatherAppTop container alignCenter flex spaceBetween">
+        <h1 class="siteTitle">Weather App</h1>
+        <button class="darkModeToggle">Dark</button>
     </div>
+    <div class="weatherDataContainer container">
+        <h2>Weather Dashboard</h2>
+        <div class="weatherDash">
+            <div class="left">
+                <form class="locationSearchForm flex directionColumn gap5">
+                    <input class="locationField" type="text" name="location" placeholder="Enter Location ..." required />
+                    <button type="submit">See Weather Data</button>
+                </form>
+            </div>
+            <div class="right">
+                <div class="locationDetails flex gap5 p5">
+                    <div class="locationText">City, Country</div>
+                    <div class="dateText">
+                        <!-- Fill with JavaScript -->
+                    </div>
+                    <div class="conditionIcon">
+                        <img class="conditionIcon" alt="Sun Icon" src="https://github.com/strawhat19/Weather-App/blob/main/assets/css/images/Sun-Icon.png?raw=true">
+                    </div>
+                </div>
+                <div class="locationWeatherDetails text-left p5">
+                    <div class="temp">Temp: 
+                        <span class="tempValue">0</span>° F
+                    </div>
+                    <div class="wind">Wind: 
+                        <span class="windValue">0</span> mph
+                    </div>
+                    <div class="humidity">Humidity: 
+                        <span class="humidityValue">0</span> %
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="copyright text-center">
+            Weather App © <span class="year">
+                <!-- Fill with JavaScript -->
+            </span>
+        </div>
+    </footer>
 </body>
 </html>
