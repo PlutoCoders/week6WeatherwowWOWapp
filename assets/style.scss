@@ -1,130 +1,155 @@
-@import url('https://fonts.googleapis.com/css2?family=Lexend+Peta:wght@100;200;300;400;500;600;700;800;900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Oswald:wght@200;300;400;500;600;700&family=Urbanist:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ysabeau+SC:wght@1;100;200;300;400;500;600;700;800;900;1000&display=swap');
-// Importing Font Family Above
-// Creating an easy to access variable list for styling I often use
 :root {
+    --clientMain: red;
+    --cardSize: 20px;
+    --background: rgb(179, 26, 187);
     --borderRadius: 8px;
-    --fontColor: white;
     --containerWidth: 90%;
-    --background: #314a89;
-    --fontFamily: 'Oswald';
-    --accentColor: teal;
-    --backgroundRepeatingLinearGradient: repeating-linear-gradient(rgb(0, 0, 0) 0px, rgb(0, 0, 0) 24px, var(--accentColor) 25px);
-    --backgroundGradient: linear-gradient(135deg, transparent 0%, transparent 17%,rgb(87 146 234 / 32%) 17%, rgba(87, 146, 234,0.6) 59%,transparent 59%, transparent 64%,rgba(34, 81, 222,0.6) 64%, rgba(34, 81, 222,0.6) 100%),linear-gradient(45deg, transparent 0%, transparent 2%,rgb(87, 146, 234) 2%, rgb(87, 146, 234) 46%,rgb(114, 178, 239) 46%, rgb(114 178 239 / 52%) 54%,transparent 54%, transparent 63%,rgb(7 48 216 / 36%) 63%, rgb(7 48 216 / 32%) 100%),linear-gradient(90deg, rgb(255,255,255),rgb(255,255,255));
 }
-
-body {
-    min-height: 100vh;
-    color: var(--fontColor);
-    font-family: var(--fontFamily);
-    background-size: cover !important;
-    background: var(--backgroundRepeatingLinearGradient);
-}
-
-button {
-    border: none;
-    cursor: pointer;
-    font-family: var(--fontFamily);
-}
-
-form {
-    input {
-        max-width: 100%;
-        padding: 0;
-        margin: 0;
-        outline: none;
-        border: none;
-    }
-}
-
-.p5 {
-    padding: 5px;
-}
-
-// Utility Classes // Classes I use throughout the app
-.flex {
+.titleContainer{
     display: flex;
-    &.gap5 {
-        grid-gap: 5px;
-    }
-    // Sass Nesting + Sass Chaining
-    &.directionColumn {
-        flex-direction: column;
-    }
-    &.alignCenter {
-        align-items: center;
-    }
-    &.justifyCenter {
-        justify-content: center;
-    }
-    &.alignCenter {
-        align-items: center;
-    }
-    &.spaceBetween {
-        justify-content: space-between;
-    }
+    border-radius: var(--borderRadius);
+    margin: 25px;
+    padding: 7px;
+    font-family: Epilogue, 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-.w100 {
+// weather CSS
+.weatherAndLocations {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.allLocationButtons {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 10px;
     width: 100%;
 }
 
-.text-left {
-    text-align: left;
+.clearLocations {
+    font-size: 14px;
 }
 
-.text-center {
-    text-align: center;
-}
-
-.text-right {
-    text-align: right;
-}
-
-.container {
-    width: var(--containerWidth);
+.locationButtons {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
     margin: 0 auto;
+    align-items: center;
+    grid-gap: 10px;
+    flex-wrap: wrap;
 }
 
-// Weather CSS
 .weatherDataContainer {
+    width: 100%;
+    border-style: solid;
+    border-radius: var(--borderRadius);
     text-align: center;
+    padding: 10px;
     .weatherDash {
         display: flex;
-        grid-gap: 15px;
         align-items: center;
-        justify-content: space-between;
-        .left {
-            width: 35%;
-            .locationSearchForm {
-                width: 100%;
-                input {
-                    padding: 3px 0 3px 3px;
-                }
-                button {
-                    width: 100%;
-                    padding: 3px;
-                    min-width: 142px;
-                }
-            }
-        }
-        .right {
-            width: 100%;
-            border: 5px solid teal;
-            border-radius: var(--borderRadius);
+        justify-content: space-evenly;
+        
+    }
+}
+.weatherData{
+    border-style: dashed;
+    padding: var(--borderRadius);
+    font-weight: 600;
+    border-radius: 5px;
+    min-height: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.fivedayForcast {
+    align-items: center;
+    display: flex;
+    padding-top: 10px;
+    font-size: 12px;
+    justify-content: space-between;
+    grid-gap: 10px;
+    .conditionIcon {
+        img {
+            max-width: 60px;
         }
     }
 }
 
-.complete {
-    text-decoration: line-through;
-    text-decoration-color: var(--accentColor);
-    text-decoration-thickness: 4px;
+#dashBoardTitle{
+    padding-bottom: 10px;
+}
+.itemToComplete{
+    display: flex;
+    justify-content: space-between;
+}
+.search-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    grid-gap: 5px;
+    input {
+        height: 100%;
+        padding: 10px;
+        border-radius: var(--borderRadius);
+        border: 0;
+     }
+  }
+  #cityInput {
+    margin-right: 10px;
+  }
+.weatherApp{
+    background: var(--background);
+    margin: 25px;
+    font-family: Epilogue, 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-.itemIndex {
-    pointer-events: none;
+
+// utility classes
+.flex{
+    display: flex;
+    &.spaceBetween {
+        justify-content: space-between;
+    }
+    &.alignCenter{
+        align-items: center;
+    }
+    &.justifyCenter{
+        justify-content: center;
+    }
+    border-style: solid;
+    border-radius: var(--borderRadius);
+    margin: 25px;
 }
 
-footer {
-    padding-top: 35px;
+.w100 {
+    width: auto;
+}
+
+// Mobile Responsiveness
+
+// Desktop View
+@media (min-width: 1000px) {
+    .weatherAndLocations {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+    .allLocationButtons {
+        max-width: 190px;
+    }
+    .locationButtons {
+        flex-wrap: nowrap;
+        flex-direction: column;
+        max-height: 497px;
+        overflow: auto;
+        button {
+            width: 100%;
+        } 
+    }
 }

@@ -1,62 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather App</title>
-    <link rel="stylesheet" href="./assets/style.css">
-    <link rel="icon" href="./assets/images/weatherIcon.png" type="image/x-icon">
-    <!-- Day JS -->
-    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.10.4/dayjs.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.10.4/plugin/utc.js"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <title>Forecast Weather Application</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" defer></script>
+    <!-- Include Day JS -->
     <script src="https://cdn.jsdelivr.net/npm/dayjs@1.10.4/plugin/timezone.js"></script>
-    <!-- Custom Script Connection-->
-    <script src="./assets/script.js" type="module" defer></script>
-</head>
-<body class="weatherApp dark">
-    <div class="weatherAppTop container alignCenter flex spaceBetween">
-        <h1 class="siteTitle">Weather App</h1>
-        <button class="darkModeToggle">Dark</button>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.10.4/plugin/utc.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.10.4/dayjs.min.js"></script>
+    <!-- Importing in custom script file -->
+    <script src="./assets/script.js" defer type="module"></script>
+    <link rel="icon" href="./assets/images/weatherIcon.png" type="site weather icon">
+  </head>
+  <body class="weatherApp dark">
+    <div class="titleContainer w100 spaceBetween">
+      <h1 id="title">Hades Weather</h1>
     </div>
-    <div class="weatherDataContainer container">
-        <h2>Weather Dashboard</h2>
-        <div class="weatherDash">
-            <div class="left">
-                <form class="locationSearchForm flex directionColumn gap5">
-                    <input class="locationField" type="text" name="location" placeholder="Enter Location ..." required />
-                    <button type="submit">See Weather Data</button>
-                </form>
-            </div>
-            <div class="right">
-                <div class="locationDetails flex gap5 p5">
-                    <div class="locationText">City, Country</div>
-                    <div class="dateText">
-                        <!-- Fill with JavaScript -->
-                    </div>
-                    <div class="conditionIcon">
-                        <img class="conditionIcon" alt="Sun Icon" src="https://github.com/strawhat19/Weather-App/blob/main/assets/css/images/Sun-Icon.png?raw=true">
-                    </div>
-                </div>
-                <div class="locationWeatherDetails text-left p5">
-                    <div class="temp">Temp: 
-                        <span class="tempValue">0</span>° F
-                    </div>
-                    <div class="wind">Wind: 
-                        <span class="windValue">0</span> mph
-                    </div>
-                    <div class="humidity">Humidity: 
-                        <span class="humidityValue">0</span> %
-                    </div>
-                </div>
-            </div>
-        </div>
+   <div class="weatherAndLocations">
+    <div class="allLocationButtons">
+      <div class="locationButtons"></div>
+      <button class="currentLocationButton btn btn-primary">Current Location</button>
+      <button class="clearLocations btn btn-primary">Clear Locations</button>
     </div>
-    <footer>
-        <div class="copyright text-center">
-            Weather App © <span class="year">
-                <!-- Fill with JavaScript -->
-            </span>
+    <div class="weatherDataContainer">
+      <h1 id="dashBoardTitle">Dashboard</h1>
+      <div class="weatherDash">
+        <div class="searchBox">
+          <form class="search-container searchForm">
+            <input
+              type="text"
+              id="locationField"
+              class="locationField"
+              placeholder="Enter Location ..."
+              name="location"
+              required
+            />
+            <button type="submit" class="btn btn-dark">Submit</button>
+          </form>
         </div>
-    </footer>
-</body>
+        <div class="weatherData">
+          <div class="location">
+            <span class="locationValue">PlaceHolder,XX </span>
+            <div class="conditionIcon"></div>
+          </div>
+          <div class="date">
+            Date: <span class="dateValue">xx/xx/xxxx </span>
+          </div>
+          <div class="time">
+            Time: <span class="timeValue">XX:XX</span>
+          </div>
+          <div class="locationWeatherDetails">
+            <div class="temp">Temp: <span class="tempValue">0</span> F</div>
+            <div class="wind">Wind: <span class="windValue">0</span> M/H</div>
+            <div class="humidity">
+              Humidity: <span class="humidityValue">0</span> %
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="fivedayForcast"></div>
+    </div>
+   </div>
+  </body>
 </html>
