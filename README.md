@@ -7,5 +7,5 @@ Weather App for week 6 bootcamp assignment
 - 
 
 # Credits
-- I had lots of help from our tutor strawhat
-- My brother and I worked on this assignment together, while trying to branch off and make the project our own as we went through it
+- I had lots of help from our tutor Rakib
+- My brother Furk and I worked on this assignment together

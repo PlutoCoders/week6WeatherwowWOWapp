@@ -1,14 +1,17 @@
+// so that we can bring in this functionality and utilize them here
 dayjs.extend(window.dayjs_plugin_utc);
 dayjs.extend(window.dayjs_plugin_timezone);
 
 let browserTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
+// setting up some basic default timeones
 let timeZones = {
     americaNewYork: `America/New_York`,
     japanTokyo: `Asia/Tokyo`,
     taiwanTaipei: `Asia/Taipei`
 }
 
+//variable section (many of these can be altered to const later for best practice)
 let defaultTimeZone = browserTimezone || timeZones.americaNewYork;
 let dateFormat = `MM/DD/YYYY`;
 let timeFormat = `h:mm:ss a`;
@@ -18,6 +21,7 @@ let fullDayFormat = `${dayFormat} ${dateFormat}`;
 let fullDateFormat = `${timeFormat} ${dateFormat}`;
 let locations = JSON.parse(localStorage.getItem(locationsDatabaseName)) || [];
 
+//const section
 const currentWeatherAPIKey = 'e77365f4013c7543eca0a224e6a01e78';
 const oneCallWeatherAPIKey = 'ce5300e7acaa327ad655b8a21d5130d8';
 const clearLocations = document.querySelector(`.clearLocations`);
